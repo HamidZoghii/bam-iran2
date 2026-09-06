@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// English display + UI faces come from Google Fonts.
+// English display face — headings only.
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-playfair",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+// English UI/body face — self-hosted, per the brief's licensed font files.
+const manrope = localFont({
+  src: [
+    { path: "../public/fonts/manrope-regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/manrope-medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/manrope-semibold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/manrope-bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-sans",
+  fallback: ["sans-serif"],
 });
 
-// Peyda is not on Google Fonts — it must be self-hosted. Drop the licensed
-// woff2 files into public/fonts/ (see public/fonts/README.md) before build;
-// Tahoma is used as a graceful fallback until then.
+// Persian face — self-hosted, per the brief's licensed font files.
 const peyda = localFont({
   src: [
     { path: "../public/fonts/Peyda-Regular.woff2", weight: "400", style: "normal" },
     { path: "../public/fonts/Peyda-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Peyda-SemiBold.woff2", weight: "600", style: "normal" },
     { path: "../public/fonts/Peyda-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-peyda",
@@ -35,7 +41,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fa" dir="rtl" className={`${playfair.variable} ${inter.variable} ${peyda.variable}`}>
+    <html
+      lang="fa"
+      dir="rtl"
+      className={`${playfair.variable} ${manrope.variable} ${peyda.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

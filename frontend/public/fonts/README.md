@@ -1,12 +1,10 @@
-# Peyda font files
+# Font files
 
-Peyda is a licensed Persian typeface and isn't distributed on Google Fonts,
-so it can't be fetched automatically. Place the licensed files here before
-running `npm run build`:
+Both are self-hosted via `next/font/local` in `app/layout.tsx`:
 
-- Peyda-Regular.woff2
-- Peyda-Medium.woff2
-- Peyda-Bold.woff2
+- **Peyda** (Persian) — Regular / Medium / SemiBold / Bold
+- **Manrope** (English UI/body) — Regular / Medium / SemiBold / Bold
 
-Until then, `next/font/local` falls back to Tahoma, so the site still runs —
-Persian text just won't carry the brand's exact typeface.
+These are licensed files — don't redistribute them outside this project.
+Playfair Display (English headings) isn't here because it's pulled from
+Google Fonts at build time instead (`next/font/google`), same as before.
