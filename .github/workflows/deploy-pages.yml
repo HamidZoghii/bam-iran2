@@ -1,0 +1,66 @@
+name: Deploy frontend to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # No `cache: npm` here on purpose — this scaffold was written
+          # without network access to run `npm install` and generate a
+          # package-lock.json. Once you've run `npm install` locally and
+          # committed the resulting lock file, add back:
+          #   cache: npm
+          #   cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Build (static export)
+        working-directory: frontend
+        env:
+          # GitHub Pages project sites are served at
+          # username.github.io/<repo-name>/ — every internal link needs
+          # that prefix baked in at build time. Override by setting a
+          # repository variable named BASE_PATH (Settings → Secrets and
+          # variables → Actions → Variables) — e.g. set it to an empty
+          # string if you're using a custom domain instead.
+          NEXT_BASE_PATH: ${{ vars.BASE_PATH || format('/{0}', github.event.repository.name) }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

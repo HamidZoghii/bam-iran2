@@ -1,0 +1,16 @@
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+frontend/npm-debug.log*
+
+# Backend (Laravel) — relevant once this scaffold is dropped into a real
+# Laravel install
+backend/vendor/
+backend/.env
+backend/storage/*.key
+
+# OS/editor noise
+.DS_Store
+.vscode/
