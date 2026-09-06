@@ -51,7 +51,7 @@ export default function PropertyDetailsPage({
       {/* Gallery */}
       <section className="container-page pt-10">
         <p className="text-sm text-body/50">{location}</p>
-        <h1 className="mt-1 font-display text-3xl text-ink md:text-4xl">{title}</h1>
+        <h1 className="mt-1 font-heading text-3xl text-ink md:text-4xl">{title}</h1>
 
         <div className="mt-8 grid gap-2 md:grid-cols-3 md:grid-rows-2">
           <div className="relative aspect-[4/3] overflow-hidden md:col-span-2 md:row-span-2">
@@ -78,7 +78,7 @@ export default function PropertyDetailsPage({
           </dl>
 
           <div className="mt-10">
-            <h2 className="font-display text-xl text-ink">{t.property.aboutTitle}</h2>
+            <h2 className="font-heading text-xl text-ink">{t.property.aboutTitle}</h2>
             <p className="mt-4 max-w-prose text-base leading-8 text-body/80">{description}</p>
             {architecturalNotes && (
               <p className="mt-4 max-w-prose text-sm leading-7 text-body/60">{architecturalNotes}</p>
@@ -86,7 +86,7 @@ export default function PropertyDetailsPage({
           </div>
 
           <div className="mt-10">
-            <h2 className="font-display text-xl text-ink">{t.property.amenitiesTitle}</h2>
+            <h2 className="font-heading text-xl text-ink">{t.property.amenitiesTitle}</h2>
             <ul className="mt-4 grid grid-cols-2 gap-3 text-sm text-body/80 sm:grid-cols-3">
               {amenities.map((a) => (
                 <li key={a} className="border-s border-gold/60 ps-3">{a}</li>
@@ -96,7 +96,7 @@ export default function PropertyDetailsPage({
 
           {similar.length > 0 && (
             <div className="mt-16">
-              <h2 className="font-display text-xl text-ink">{t.property.similarTitle}</h2>
+              <h2 className="font-heading text-xl text-ink">{t.property.similarTitle}</h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {similar.map((p) => (
                   <PropertyCard key={p.slug} property={p} locale={locale} />
@@ -120,7 +120,7 @@ export default function PropertyDetailsPage({
               </div>
               <div>
                 <p className="text-xs text-body/50">{t.property.agentTitle}</p>
-                <p className="font-display text-base text-ink">
+                <p className="font-heading text-base text-ink">
                   {locale === "fa" ? agent.name_fa : agent.name_en}
                 </p>
               </div>

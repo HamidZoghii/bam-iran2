@@ -13,7 +13,7 @@ export default function ContactPage({ params }: { params: { locale: Locale } }) 
     <div className="container-page py-16">
       <div className="grid gap-16 lg:grid-cols-[1fr_420px]">
         <div>
-          <h1 className="font-display text-3xl text-ink md:text-4xl">{t.contact.title}</h1>
+          <h1 className="font-heading text-3xl text-ink md:text-4xl">{t.contact.title}</h1>
           <p className="mt-6 max-w-prose text-base leading-8 text-body/80">{t.contact.lead}</p>
           <p className="mt-8 text-sm text-body/50">{t.contact.hours}</p>
         </div>

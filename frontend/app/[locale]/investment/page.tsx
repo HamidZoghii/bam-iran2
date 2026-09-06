@@ -10,7 +10,7 @@ export default function InvestmentPage({ params }: { params: { locale: Locale } 
 
   return (
     <div className="container-page py-16">
-      <h1 className="font-display text-3xl text-ink md:text-4xl">{t.investment.title}</h1>
+      <h1 className="font-heading text-3xl text-ink md:text-4xl">{t.investment.title}</h1>
       <p className="mt-6 max-w-prose text-base leading-8 text-body/80">{t.investment.lead}</p>
 
       <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -25,7 +25,7 @@ export default function InvestmentPage({ params }: { params: { locale: Locale } 
               </div>
               <div className="p-6">
                 <p className="text-xs text-gold">{tag}</p>
-                <h2 className="mt-1 font-display text-xl text-ink">{title}</h2>
+                <h2 className="mt-1 font-heading text-xl text-ink">{title}</h2>
                 <p className="mt-3 text-sm leading-7 text-body/70">{summary}</p>
                 {op.relatedPropertySlug && (
                   <Link

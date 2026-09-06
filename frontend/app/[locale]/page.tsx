@@ -26,7 +26,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
         <div className="container-page relative pb-16 pt-40 text-paper">
           <p className="text-sm text-gold">{t.home.heroKicker}</p>
-          <h1 className="mt-5 max-w-3xl font-display text-4xl leading-tight md:text-6xl">
+          <h1 className="mt-5 max-w-3xl font-heading text-4xl leading-tight md:text-6xl">
             {t.home.heroHeadline}
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-paper/75">{t.home.heroSub}</p>
@@ -59,7 +59,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       {/* Featured properties */}
       <section className="container-page mt-24">
         <div className="mb-8 flex items-end justify-between">
-          <h2 className="font-display text-2xl text-ink md:text-3xl">{t.home.featuredTitle}</h2>
+          <h2 className="font-heading text-2xl text-ink md:text-3xl">{t.home.featuredTitle}</h2>
           <Link href={`/${locale}/properties`} className="text-sm text-body/60 hover:text-ink">
             {t.cta.viewAll}
           </Link>
@@ -73,7 +73,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
       {/* Why Bam Iran — editorial two-column, not an icon-feature grid */}
       <section className="container-page mt-28 grid gap-12 md:grid-cols-2 md:gap-20">
-        <h2 className="font-display text-3xl leading-snug text-ink md:text-4xl">
+        <h2 className="font-heading text-3xl leading-snug text-ink md:text-4xl">
           {t.home.whyTitle}
         </h2>
         <div>
@@ -83,7 +83,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
       {/* Investment preview */}
       <section className="container-page mt-28">
-        <h2 className="mb-8 font-display text-2xl text-ink md:text-3xl">
+        <h2 className="mb-8 font-heading text-2xl text-ink md:text-3xl">
           {t.home.investmentTitle}
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
@@ -102,7 +102,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                 </div>
                 <div>
                   <p className="text-xs text-gold">{tag}</p>
-                  <p className="mt-1 font-display text-lg text-ink">{title}</p>
+                  <p className="mt-1 font-heading text-lg text-ink">{title}</p>
                   <p className="mt-2 text-sm leading-7 text-body/70">{summary}</p>
                 </div>
               </Link>
@@ -114,7 +114,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
       {/* Closing CTA */}
       <section className="container-page my-28">
         <div className="flex flex-col items-start justify-between gap-6 border-t border-ink/10 pt-12 md:flex-row md:items-end">
-          <p className="max-w-md font-display text-2xl text-ink">{t.tagline}</p>
+          <p className="max-w-md font-heading text-2xl text-ink">{t.tagline}</p>
           <Link
             href={`/${locale}/contact`}
             className="bg-ink px-7 py-3 text-sm text-paper transition hover:bg-ink/90"

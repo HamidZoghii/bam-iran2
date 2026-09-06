@@ -17,6 +17,16 @@ const config: Config = {
         body: "#1F2937",     // body text
       },
       fontFamily: {
+        // Both of these are locale-aware: the [locale] layout sets
+        // --font-heading/--font-body per locale (Playfair + Manrope for
+        // English, Peyda for both roles in Persian — Peyda is the brief's
+        // one Persian face; Playfair has no Persian/Arabic glyphs at all,
+        // so using it directly on Persian text silently falls back to a
+        // generic system font, which is the bug this fixes). "display" and
+        // "sans" stay available as explicit escape hatches for anywhere
+        // that specifically wants one face regardless of locale.
+        heading: ["var(--font-heading)", "serif"],
+        body: ["var(--font-body)", "sans-serif"],
         display: ["var(--font-playfair)", "serif"],
         sans: ["var(--font-sans)", "sans-serif"],
         peyda: ["var(--font-peyda)", "Tahoma", "sans-serif"],

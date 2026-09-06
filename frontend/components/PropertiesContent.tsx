@@ -39,7 +39,7 @@ export default function PropertiesContent({ locale }: { locale: Locale }) {
 
   return (
     <div className="container-page py-16">
-      <h1 className="font-display text-3xl text-ink md:text-4xl">{t.nav.properties}</h1>
+      <h1 className="font-heading text-3xl text-ink md:text-4xl">{t.nav.properties}</h1>
 
       <div className="mt-8 border border-ink/10 bg-white/40 p-5 md:p-6">
         <PropertyFilters

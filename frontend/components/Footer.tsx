@@ -9,7 +9,7 @@ export default function Footer({ locale }: { locale: Locale }) {
     <footer className="mt-24 border-t border-ink/10 bg-ink text-paper/80">
       <div className="container-page grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <p className="font-display text-lg text-paper">{t.brand}</p>
+          <p className="font-heading text-lg text-paper">{t.brand}</p>
           <p className="mt-3 max-w-xs text-sm leading-7 text-paper/60">{t.tagline}</p>
         </div>
 

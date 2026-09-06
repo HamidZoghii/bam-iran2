@@ -19,7 +19,7 @@ export default function Header({ locale }: { locale: Locale }) {
       <div className="container-page flex h-20 items-center justify-between gap-6">
         <Link
           href={`/${locale}`}
-          className="font-display text-xl font-semibold tracking-tightish text-ink"
+          className="font-heading text-xl font-semibold tracking-tightish text-ink"
         >
           {t.brand}
         </Link>

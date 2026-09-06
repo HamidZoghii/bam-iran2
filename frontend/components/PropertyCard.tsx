@@ -37,7 +37,7 @@ export default function PropertyCard({
 
       <div className="p-5">
         <p className="text-xs text-body/50">{location}</p>
-        <h3 className="mt-1 font-display text-lg text-ink">{title}</h3>
+        <h3 className="mt-1 font-heading text-lg text-ink">{title}</h3>
 
         <div className="mt-4 flex items-center justify-between border-t border-ink/10 pt-4 text-sm">
           <span className="text-gold">{formatPrice(property, locale)}</span>

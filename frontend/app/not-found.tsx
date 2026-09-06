@@ -7,7 +7,7 @@ import { defaultLocale } from "@/lib/dictionaries";
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-paper px-6 text-center">
-      <p className="font-display text-2xl text-ink">۴۰۴ — این صفحه پیدا نشد</p>
+      <p className="font-heading text-2xl text-ink">۴۰۴ — این صفحه پیدا نشد</p>
       <p className="text-sm text-body/60">404 — this page could not be found.</p>
       <Link
         href={`/${defaultLocale}`}
